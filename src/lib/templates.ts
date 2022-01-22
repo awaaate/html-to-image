@@ -1,4 +1,4 @@
-export const basicTemplate = {
+export const basicTemplate = ({ domain }: { domain: string }) => ({
     css: `.heading {
         font-size: 32px;
         font-weight: 900;
@@ -35,9 +35,9 @@ button {
     border: 0;
 }`,
     html: `<h1 class="heading">Hello world</h1>
-<img src="http://localhost:3000/cat.jpg" class="image" />
+<img src="${domain}/cat.jpg" class="image" />
 <button>I'm a cat</button>
     `,
     width: 700,
     height: 700,
-};
+});

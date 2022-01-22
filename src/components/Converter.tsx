@@ -5,10 +5,11 @@ import {
     TabList,
     TabPanel,
     TabPanels,
-    Tabs,
+    Tabs
 } from "@chakra-ui/react";
 import { css } from "@emotion/react";
 import { FormikProvider, useFormik } from "formik";
+import { useRouter } from "next/dist/client/router";
 import { basicTemplate } from "../lib/templates";
 import { schema } from "../lib/validateParams";
 import { CodeEditor } from "./CodeEditor";
@@ -18,8 +19,9 @@ import { GenerateModal } from "./GenerateModal";
 interface ConverterProps {}
 
 export const Converter: React.FC<ConverterProps> = ({}) => {
+    const router = useRouter();
     const formik = useFormik({
-        initialValues: basicTemplate,
+        initialValues: basicTemplate({ domain: router.basePath }),
         validationSchema: schema,
         onSubmit: () => {},
     });
