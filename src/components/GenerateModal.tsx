@@ -1,17 +1,9 @@
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import {
-    Button,
-    chakra,
-    Image,
+    Button, Image,
     Modal,
-    ModalBody,
-    ModalCloseButton,
-    ModalContent,
-    ModalHeader,
-    ModalOverlay,
-    Skeleton,
-    Spinner,
-    useDisclosure,
+    ModalBody, ModalContent, ModalOverlay, Spinner,
+    useDisclosure
 } from "@chakra-ui/react";
 import { useFormikContext } from "formik";
 import { useCreateImage } from "../hooks/useCreateImage";
