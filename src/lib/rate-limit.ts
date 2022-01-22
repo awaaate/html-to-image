@@ -17,10 +17,10 @@ export const rateLimit = (options: {
                     tokenCache.set(token, tokenCount);
                 }
                 tokenCount[0] += 1;
-
                 const currentUsage = tokenCount[0];
                 const isRateLimited = currentUsage >= limit;
                 res.setHeader("X-RateLimit-Limit", limit);
+                console.log({currentUsage, isRateLimited, tokenCount})
                 res.setHeader(
                     "X-RateLimit-Remaining",
                     isRateLimited ? 0 : limit - currentUsage
